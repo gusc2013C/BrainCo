@@ -1,0 +1,28 @@
+The windows version has a glitch that will scan all BLE devices instead of our BrainCo headbands.
+
+Make sure you use a BLE enabled laptop. MacOS is recommended.
+
+
+When using the headband for the first time, your laptop should be paired with the device.
+
+Long press the button for 3 seconds, then LED light will start to blink quickly in blue.
+
+Uncomment this line:
+    _target_device.pair(on_pair_response)
+And comment out this line:
+    _target_device.check_pairing_status(on_check_paring_status_response)
+
+Run python3 example.py 
+
+Then you can use the device after
+
+Comment out this line:
+    _target_device.pair(on_pair_response)
+
+And uncomment this line:
+    _target_device.check_pairing_status(on_check_paring_status_response)
+
+
+Run python3 example.py
+
+
